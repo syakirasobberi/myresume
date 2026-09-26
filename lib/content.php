@@ -10,8 +10,8 @@ function resume_default_content()
     return [
         'profile' => [
             'name' => 'Nurul Syakirah',
-            'headline' => 'Software Engineering Student & Web Developer.',
-            'typed_items' => 'Student, Designer, Freelancer',
+            'headline' => 'Software Engineering Student & Web Developer',
+            'typed_items' => 'Web Developer, QA Analyst, Software Engineering Student',
             'background_image' => 'assets/img/bg1.png',
             'profile_image' => 'assets/img/profile1.jpg',
             'facebook' => 'https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr',
@@ -19,8 +19,8 @@ function resume_default_content()
             'linkedin' => 'https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         ],
         'about' => [
-            'intro' => 'I am Nurul Syakirah a final-year Software Engineering student with a passion for developing web-based systems and enhancing user experiences. My academic journey has been complemented by hands-on experience through coursework and an internship at Pejabat Daerah Perak Tengah. I enjoy exploring UI/UX design, system development, and multimedia learning principles, and I am always eager to learn new technologies and collaborate on innovative projects.',
-            'tagline' => 'Passionate software engineering student with experience in building web-based applications. Enthusiastic about UI/UX design and system development.',
+            'intro' => 'I am Nurul Syakirah, a Software Engineering student focused on building practical, reliable, and user-friendly web applications. My experience includes academic software projects, QA testing, UI improvements, and internship exposure in government and corporate environments. I am seeking opportunities to contribute to professional technology teams while continuing to strengthen my engineering and problem-solving skills.',
+            'tagline' => 'Web development and QA-focused software engineering candidate with strong interest in dependable systems, clear user experiences, and collaborative delivery.',
             'birthday' => '1 October 2003',
             'website' => 'http://d09097.schtg.com/',
             'phone' => '012-5764231',
@@ -29,7 +29,7 @@ function resume_default_content()
             'degree' => "Bachelor's in Software Engineering",
             'email' => 'Syakirahnurul438@gmail.com',
             'freelance' => 'available',
-            'details' => 'Completed internship at Pejabat Daerah Perak Tengah, where I assisted in developing and maintaining internal web systems. Currently developing a multimedia-based learning platform as part of my final year project.',
+            'details' => 'Completed internship experience at Pejabat Daerah Perak Tengah and Synergy Alliance Sdn. Bhd., contributing to internal systems, application testing, responsive interfaces, and project documentation.',
         ],
         'skills' => [
             ['id' => 1, 'name' => 'HTML', 'percentage' => 100],
@@ -39,10 +39,22 @@ function resume_default_content()
             ['id' => 5, 'name' => 'WordPress/CMS', 'percentage' => 70],
             ['id' => 6, 'name' => 'Photoshop', 'percentage' => 55],
         ],
+        'highlights' => [
+            ['icon' => 'bi-code-slash', 'title' => 'Web Development', 'description' => 'Experience building PHP, Laravel, JavaScript, and database-backed web systems.'],
+            ['icon' => 'bi-bug', 'title' => 'QA Testing', 'description' => 'Hands-on application testing experience using Katalon and structured UAT workflows.'],
+            ['icon' => 'bi-check2-circle', 'title' => 'Project Delivery', 'description' => 'Completed academic and internship projects with documentation, UI work, and testing support.'],
+            ['icon' => 'bi-people', 'title' => 'Team Ready', 'description' => 'Prepared to contribute in structured teams with clear communication and continuous learning.'],
+        ],
+        'tech_stack' => ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'Katalon', 'Git', 'UI/UX', 'Documentation'],
+        'cta' => [
+            'label' => 'Open To Opportunities',
+            'title' => 'Available for internship, graduate trainee, junior developer, and QA analyst roles.',
+            'text' => 'I am ready to contribute to professional software teams through web development, testing, documentation, and continuous improvement.',
+        ],
         'resume' => [
-            'intro' => 'Dedicated Software Engineering student with hands-on experience in full-stack web development, user-centered design, and multimedia-based systems. Passionate about building intuitive, effective digital solutions.',
+            'intro' => 'Software Engineering candidate with hands-on experience in web development, QA testing, UI implementation, and database-backed systems. Prepared to contribute in structured, professional software teams.',
             'summary_name' => 'Nurul Syakirah Binti Sobberi',
-            'summary_text' => 'Motivated and detail-oriented Software Engineering student with experience in developing web-based systems and multimedia learning platforms. Capable of designing and implementing user-friendly applications using modern web technologies.',
+            'summary_text' => 'Motivated and detail-oriented Software Engineering student with experience developing web-based systems, validating application quality, and improving user interfaces. Comfortable working with requirements, testing workflows, documentation, and modern web technologies.',
             'summary_location' => 'Seri Iskandar, Perak',
             'summary_phone' => '(60) 12-5764231',
             'summary_website' => 'http://d09097.schtg.com/',
@@ -56,7 +68,7 @@ function resume_default_content()
             ],
         ],
         'portfolio' => [
-            'intro' => 'This portfolio highlights my academic and personal projects in software engineering, including web applications, system development, and UI/UX design. Each project demonstrates my growth, creativity, and passion for building technology that matters.',
+            'intro' => 'Selected projects showing practical experience in web application development, UI/UX design, QA testing, and system documentation. Each item reflects applied coursework, internship tasks, or independent software delivery.',
             'items' => [
                 ['id' => 1, 'title' => 'Bicycle Renting System', 'category' => 'Projects', 'description' => 'Final Year Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-1.png', 'link' => '#'],
                 ['id' => 2, 'title' => 'District Office Web System', 'category' => 'Internship', 'description' => 'Internship Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-2.png', 'link' => '#'],

@@ -1,8 +1,8 @@
 {
     "profile": {
         "name": "Nurul Syakirah",
-        "headline": "Software Engineering Student & Web Developer.",
-        "typed_items": "Student, Freelancer",
+        "headline": "Software Engineering Student & Web Developer",
+        "typed_items": "Web Developer, QA Analyst, Software Engineering Student",
         "background_image": "assets/img/bg1.png",
         "profile_image": "assets/img/profile1.jpg",
         "facebook": "https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr",
@@ -10,8 +10,8 @@
         "linkedin": "https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     "about": {
-        "intro": "I am Nurul Syakirah a final-year Software Engineering student with a passion for developing web-based systems and enhancing user experiences. My academic journey has been complemented by hands-on experience through coursework and an internship at Pejabat Daerah Perak Tengah. I enjoy exploring UI/UX design, system development, and multimedia learning principles, and I am always eager to learn new technologies and collaborate on innovative projects.",
-        "tagline": "Passionate software engineering student with experience in building web-based applications. Enthusiastic about UI/UX design and system development.",
+        "intro": "I am Nurul Syakirah, a Software Engineering student focused on building practical, reliable, and user-friendly web applications. My experience includes academic software projects, QA testing, UI improvements, and internship exposure in government and corporate environments. I am seeking opportunities to contribute to professional technology teams while continuing to strengthen my engineering and problem-solving skills.",
+        "tagline": "Web development and QA-focused software engineering candidate with strong interest in dependable systems, clear user experiences, and collaborative delivery.",
         "birthday": "1 October 2003",
         "website": "http://d09097.schtg.com/",
         "phone": "012-5764231",
@@ -20,7 +20,7 @@
         "degree": "Bachelor's in Software Engineering",
         "email": "Syakirahnurul438@gmail.com",
         "freelance": "available",
-        "details": "Completed internship at Pejabat Daerah Perak Tengah, where I assisted in developing and maintaining internal web systems. Currently developing a multimedia-based learning platform as part of my final year project."
+        "details": "Completed internship experience at Pejabat Daerah Perak Tengah and Synergy Alliance Sdn. Bhd., contributing to internal systems, application testing, responsive interfaces, and project documentation."
     },
     "skills": [
         {
@@ -54,10 +54,51 @@
             "percentage": 80
         }
     ],
+    "highlights": [
+        {
+            "icon": "bi-code-slash",
+            "title": "Web Development",
+            "description": "Experience building PHP, Laravel, JavaScript, and database-backed web systems."
+        },
+        {
+            "icon": "bi-bug",
+            "title": "QA Testing",
+            "description": "Hands-on application testing experience using Katalon and structured UAT workflows."
+        },
+        {
+            "icon": "bi-check2-circle",
+            "title": "Project Delivery",
+            "description": "Completed academic and internship projects with documentation, UI work, and testing support."
+        },
+        {
+            "icon": "bi-people",
+            "title": "Team Ready",
+            "description": "Prepared to contribute in structured teams with clear communication and continuous learning."
+        }
+    ],
+    "tech_stack": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "Laravel",
+        "MySQL",
+        "Bootstrap",
+        "Tailwind CSS",
+        "Katalon",
+        "Git",
+        "UI/UX",
+        "Documentation"
+    ],
+    "cta": {
+        "label": "Open To Opportunities",
+        "title": "Available for internship, graduate trainee, junior developer, and QA analyst roles.",
+        "text": "I am ready to contribute to professional software teams through web development, testing, documentation, and continuous improvement."
+    },
     "resume": {
-        "intro": "Dedicated Software Engineering student with hands-on experience in full-stack web development, user-centered design, and multimedia-based systems. Passionate about building intuitive, effective digital solutions.",
+        "intro": "Software Engineering candidate with hands-on experience in web development, QA testing, UI implementation, and database-backed systems. Prepared to contribute in structured, professional software teams.",
         "summary_name": "Nurul Syakirah Binti Sobberi",
-        "summary_text": "Motivated and detail-oriented Software Engineering student with experience in developing web-based systems and multimedia learning platforms. Capable of designing and implementing user-friendly applications using modern web technologies.",
+        "summary_text": "Motivated and detail-oriented Software Engineering student with experience developing web-based systems, validating application quality, and improving user interfaces. Comfortable working with requirements, testing workflows, documentation, and modern web technologies.",
         "summary_location": "Seri Iskandar, Perak",
         "summary_phone": "(60) 12-5764231",
         "summary_website": "http://d09097.schtg.com/",
@@ -109,7 +150,7 @@
         ]
     },
     "portfolio": {
-        "intro": "This portfolio highlights my academic and personal projects in software engineering, including web applications, system development, and UI/UX design. Each project demonstrates my growth, creativity, and passion for building technology that matters.",
+        "intro": "Selected projects showing practical experience in web application development, UI/UX design, QA testing, and system documentation. Each item reflects applied coursework, internship tasks, or independent software delivery.",
         "items": [
             {
                 "id": 1,
@@ -117,7 +158,13 @@
                 "category": "Projects",
                 "description": "Diploma Final Year Project",
                 "image": "assets/img/masonry-portfolio/masonry-portfolio-1.png",
-                "link": "#"
+                "link": "#",
+                "problem": "Students and users need a clearer way to check bicycle availability, submit rental information, and manage bookings without relying on manual records.",
+                "role": "Full-stack student developer responsible for interface design, form flow, and database-backed rental records.",
+                "technologies": ["PHP", "MySQL", "Bootstrap", "HTML", "CSS"],
+                "features": ["Bicycle listing and rental request flow", "User-friendly booking form structure", "Database storage for rental information", "Responsive pages for desktop and mobile users"],
+                "outcome": "Delivered a diploma final year project that demonstrates CRUD flow, form handling, and practical web application structure.",
+                "screenshots": []
             },
             {
                 "id": 2,
@@ -125,7 +172,13 @@
                 "category": "Internship",
                 "description": "Internship Project",
                 "image": "assets/img/masonry-portfolio/masonry-portfolio-2.png",
-                "link": "#"
+                "link": "#",
+                "problem": "Internal administrative users needed support maintaining web pages and improving usability for official district office workflows.",
+                "role": "Intern web developer assisting with maintenance, UI improvements, troubleshooting, and responsive updates.",
+                "technologies": ["PHP", "HTML", "CSS", "Bootstrap"],
+                "features": ["Internal web page maintenance", "Responsive interface improvements", "Issue checking and troubleshooting support", "Content and layout updates for official use"],
+                "outcome": "Gained real workplace exposure by supporting internal government web systems and collaborating with senior staff.",
+                "screenshots": []
             },
             {
                 "id": 3,
@@ -133,7 +186,13 @@
                 "category": "Assignments",
                 "description": "Class Project",
                 "image": "assets/img/masonry-portfolio/masonry-portfolio-3.jpg",
-                "link": "#"
+                "link": "#",
+                "problem": "The original interface needed better visual hierarchy, clearer navigation, and improved readability for users.",
+                "role": "UI/UX designer responsible for analyzing user flow, redesigning screens, and improving presentation quality.",
+                "technologies": ["Wireframing", "Prototyping", "UI Design", "Usability Review"],
+                "features": ["Improved page layout and spacing", "Clearer visual hierarchy and call-to-action placement", "More consistent colors and component styling", "User-centered screen flow improvements"],
+                "outcome": "Produced a cleaner interface concept that improved usability, structure, and professional presentation.",
+                "screenshots": []
             },
             {
                 "id": 4,
@@ -141,7 +200,13 @@
                 "category": "Assignments",
                 "description": "Authentication System",
                 "image": "assets/img/masonry-portfolio/masonry-portfolio-6.png",
-                "link": "#"
+                "link": "#",
+                "problem": "Users need a simple and clear registration interface that supports data entry with readable layout and basic validation.",
+                "role": "Frontend developer building the registration form interface and validation-focused user experience.",
+                "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap"],
+                "features": ["Responsive registration form layout", "Input grouping for clearer data entry", "Basic client-side validation pattern", "Clean form styling for better readability"],
+                "outcome": "Created a practical authentication interface component that demonstrates frontend structure and user input handling.",
+                "screenshots": []
             },
             {
                 "id": 5,
@@ -149,7 +214,13 @@
                 "category": "Projects",
                 "description": "Degree Final Year Project",
                 "image": "admin/uploads/20260925160557-1d9a590f.jpg",
-                "link": "#"
+                "link": "#",
+                "problem": "Community pharmacies often manage patient health and medication records manually, causing scattered records and slower monitoring.",
+                "role": "Laravel developer and QA tester responsible for feature implementation, interface support, testing, and UAT documentation.",
+                "technologies": ["Laravel 12", "MySQL", "Tailwind CSS", "Face-API.js", "OCR", "Katalon"],
+                "features": ["Patient registration and profile management", "Medication tracking and health monitoring records", "AI-assisted recommendation concept", "Face recognition and OCR-supported workflow", "UAT test cases and quality validation"],
+                "outcome": "Achieved 100% pass rate across 26 UAT test cases with 8 respondents, showing successful validation of core workflows.",
+                "screenshots": []
             }
         ]
     }

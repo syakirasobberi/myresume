@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/lib/content.php';
+require_once __DIR__ . '/lib/project-details.php';
 $content = resume_get_content();
 $portfolio = $content['portfolio'];
 ?>
@@ -27,13 +28,24 @@ $portfolio = $content['portfolio'];
 
             <?php foreach ($portfolio['items'] as $item): ?>
             <?php $image = $item['image'] ?: 'assets/img/masonry-portfolio/masonry-portfolio-1.png'; ?>
+            <?php $details = resume_project_detail_for($item); ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= h(resume_filter_class($item['category'])) ?>">
+              <div class="portfolio-card">
               <img src="<?= h($image) ?>" class="img-fluid" alt="<?= h($item['title']) ?>">
               <div class="portfolio-info">
+                <span class="portfolio-category"><?= h($item['category']) ?></span>
                 <h4><?= h($item['title']) ?></h4>
                 <p><?= h($item['description']) ?></p>
+                <div class="portfolio-details-mini">
+                  <strong>Role:</strong> <?= h($details['role']) ?>
+                </div>
+                <div class="portfolio-stack">
+                  <?php foreach (array_slice($details['technologies'], 0, 4) as $tool): ?><span><?= h($tool) ?></span><?php endforeach; ?>
+                </div>
+                <p class="portfolio-outcome"><?= h($details['outcome']) ?></p>
                 <a href="<?= h($image) ?>" title="<?= h($item['title']) ?>" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <?php if (!empty($item['link']) && $item['link'] !== '#'): ?><a href="<?= h($item['link']) ?>" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a><?php endif; ?>
+                <a href="project-details.php?id=<?= h($item['id']) ?>" title="Project Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
               </div>
             </div><!-- End Portfolio Item -->
             <?php endforeach; ?>

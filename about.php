@@ -13,29 +13,27 @@ $about = $content['about'];
     </div>
 
     <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4 justify-content-center">
-        <div class="col-lg-4">
-          <img src="<?= h($profile['profile_image']) ?>" style="width: 300px; height: auto;" class="img-fluid" alt="">
+      <div class="row gy-4 justify-content-center align-items-center about-card">
+        <div class="col-lg-4 text-center">
+          <img src="<?= h($profile['profile_image']) ?>" class="img-fluid about-photo" alt="<?= h($profile['name']) ?>">
         </div>
         <div class="col-lg-8 content">
           <h2><?= h($profile['headline']) ?></h2>
-          <p class="fst-italic py-3"><?= h($about['tagline']) ?></p>
+          <p class="about-tagline py-3"><?= h($about['tagline']) ?></p>
 
-          <div class="row">
+          <div class="row professional-details">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span><?= h($about['birthday']) ?></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span><a href="<?= h($about['website']) ?>"><?= h($about['website']) ?></a></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span><?= h($about['phone']) ?></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span><?= h($about['city']) ?></span></li>
+                <li><i class="bi bi-globe2"></i> <strong>Portfolio:</strong> <span><a href="<?= h($about['website']) ?>"><?= h($about['website']) ?></a></span></li>
+                <li><i class="bi bi-telephone"></i> <strong>Phone:</strong> <span><?= h($about['phone']) ?></span></li>
+                <li><i class="bi bi-geo-alt"></i> <strong>Location:</strong> <span><?= h($about['city']) ?></span></li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Age:</strong> <span><?= h($about['age']) ?></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Degree:</strong> <span><?= h($about['degree']) ?></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span><?= h($about['email']) ?></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span><?= h($about['freelance']) ?></span></li>
+                <li><i class="bi bi-mortarboard"></i> <strong>Education:</strong> <span><?= h($about['degree']) ?></span></li>
+                <li><i class="bi bi-envelope"></i> <strong>Email:</strong> <span><?= h($about['email']) ?></span></li>
+                <li><i class="bi bi-briefcase"></i> <strong>Availability:</strong> <span><?= h(ucfirst($about['freelance'])) ?></span></li>
               </ul>
             </div>
           </div>

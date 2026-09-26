@@ -20,7 +20,7 @@ $profile = $content['profile'];
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&family=Roboto:wght@400;500;700&family=Raleway:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,9 +60,16 @@ $profile = $content['profile'];
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
-          <div class="col-lg-9">
+          <div class="col-lg-9 hero-panel">
+            <span class="hero-kicker">Software Engineering Portfolio</span>
             <h2><?= h($profile['name']) ?></h2>
-            <p>I'm <span class="typed" data-typed-items="<?= h($profile['typed_items']) ?>"><?= h(strtok($profile['typed_items'], ',')) ?></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+            <p class="hero-subtitle">Aspiring <span class="typed" data-typed-items="<?= h($profile['typed_items']) ?>"><?= h(strtok($profile['typed_items'], ',')) ?></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span> focused on reliable web systems, clean user experiences, and continuous learning.</p>
+            <div class="hero-actions">
+              <a href="#resume" class="btn-primary-outline">View Resume</a>
+              <button type="button" class="btn-secondary-outline hero-print-button" onclick="window.print()">Save Resume PDF</button>
+              <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
+              <a href="#contact" class="btn-secondary-outline">Contact Me</a>
+            </div>
             <div class="social-links">
               <?php if (!empty($profile['facebook'])): ?><a href="<?= h($profile['facebook']) ?>"><i class="bi bi-facebook"></i></a><?php endif; ?>
               <?php if (!empty($profile['instagram'])): ?><a href="<?= h($profile['instagram']) ?>"><i class="bi bi-instagram"></i></a><?php endif; ?>
@@ -78,6 +85,14 @@ $profile = $content['profile'];
     <?php include 'about.php'; ?>
     <!-- About Section -->
 
+    <!-- Highlights Section -->
+    <?php include 'highlights.php'; ?>
+    <!-- /Highlights Section -->
+
+    <!-- Tech Stack Section -->
+    <?php include 'techstack.php'; ?>
+    <!-- /Tech Stack Section -->
+
     <!-- Skills Section -->
     <?php include 'skills.php'; ?>
     <!-- /Skills Section -->
@@ -88,6 +103,10 @@ $profile = $content['profile'];
     <!-- Portfolio Section -->
     <?php include 'portfolio.php'; ?>
     <!-- /Portfolio Section -->
+
+    <!-- Hiring CTA Section -->
+    <?php include 'hire-cta.php'; ?>
+    <!-- /Hiring CTA Section -->
 
     <!-- Contact Section -->
     <?php include 'contact.php'; ?>

@@ -6,7 +6,7 @@ $profile = $content['profile'];
  <footer id="footer" class="footer position-relative light-background">
     <div class="container">
       <h3 class="sitename"><?= h($profile['name']) ?></h3>
-      <p>Welcome to my personal portfolio. I'm a <?= h($profile['headline']) ?></p>
+      <p>Professional portfolio showcasing software engineering, QA, and web development experience.</p>
       <div class="social-links d-flex justify-content-center">
         <?php if (!empty($profile['facebook'])): ?><a href="<?= h($profile['facebook']) ?>"><i class="bi bi-facebook"></i></a><?php endif; ?>
         <?php if (!empty($profile['instagram'])): ?><a href="<?= h($profile['instagram']) ?>"><i class="bi bi-instagram"></i></a><?php endif; ?>

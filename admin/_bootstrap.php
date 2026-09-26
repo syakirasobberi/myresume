@@ -59,6 +59,21 @@ function admin_upload_image($field, $current = '')
     return 'admin/uploads/' . $filename;
 }
 
+function admin_list_from_text($value)
+{
+    $parts = preg_split('/\r\n|\r|\n|,/', (string)$value);
+    return array_values(array_filter(array_map('trim', $parts)));
+}
+
+function admin_text_from_list($value)
+{
+    if (is_array($value)) {
+        return implode("\n", array_filter(array_map('trim', array_map('strval', $value))));
+    }
+
+    return (string)$value;
+}
+
 function admin_header($title)
 {
     ?>

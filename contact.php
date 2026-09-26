@@ -13,13 +13,13 @@ $about = $content['about'];
 
       <div class="container" data-aos="fade" data-aos-delay="100">
 
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
 
-          <div class="col-lg-4">
+          <div class="col-lg-8 col-xl-7 contact-card">
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="200">
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
-                <h3>Address</h3>
+                <h3>Location</h3>
                 <p><?= h($about['city']) ?></p>
               </div>
             </div><!-- End Info Item -->
@@ -27,7 +27,7 @@ $about = $content['about'];
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
-                <h3>Call Us</h3>
+                <h3>Phone</h3>
                 <p><a href="tel:<?= h(preg_replace('/[^0-9+]/', '', $about['phone'])) ?>"><?= h($about['phone']) ?></a></p>
               </div>
             </div><!-- End Info Item -->
@@ -35,7 +35,7 @@ $about = $content['about'];
             <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
-                <h3>Email Us</h3>
+                <h3>Email</h3>
                 <p><a href="mailto:<?= h($about['email']) ?>"><?= h($about['email']) ?></a></p>
               </div>
             </div><!-- End Info Item -->

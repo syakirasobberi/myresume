@@ -13,10 +13,10 @@ $resume = $content['resume'];
 
       <div class="container">
 
-        <div class="row">
+        <div class="row g-4 resume-grid">
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Sumary</h3>
+            <h3 class="resume-title">Summary</h3>
 
             <div class="resume-item pb-0">
               <h4><?= h($resume['summary_name']) ?></h4>

@@ -11,7 +11,7 @@ $skills = $content['skills'];
         <p>Here are some of the technical skills I have developed through coursework, projects, and internships.</p>
       </div><!-- End Section Title -->
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container skills-card" data-aos="fade-up" data-aos-delay="100">
 
         <div class="row skills-content skills-animation">
 
