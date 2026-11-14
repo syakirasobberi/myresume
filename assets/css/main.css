@@ -64,6 +64,7 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  zoom: 0.9;
 }
 
 a {
@@ -171,7 +172,7 @@ h6 {
 
   .header~main .hero {
     margin-left: -160px;
-    width: 100vw;
+    width: calc(100% + 160px);
   }
 }
 
@@ -517,7 +518,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: 100vh;
+  min-height: 111.111vh;
   position: relative;
   padding: 80px 0;
   display: flex;
@@ -532,6 +533,8 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
+  transform: scale(1.08);
   z-index: 1;
 }
 
@@ -1667,10 +1670,10 @@ section,
 }
 
 .about-photo {
-  width: 190px;
-  max-width: 190px;
-  height: 190px;
-  aspect-ratio: 1 / 1;
+  width: min(100%, 300px);
+  max-width: 300px;
+  height: 380px;
+  aspect-ratio: 3 / 4;
   object-fit: cover;
   object-position: center top;
   padding: 8px;
@@ -2434,6 +2437,60 @@ section,
   padding: 34px;
 }
 
+.contact-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #e2e8f0;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.28), transparent 18rem),
+    linear-gradient(135deg, #0f172a 0%, #123047 100%);
+}
+
+.contact-eyebrow {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: 999px;
+  color: #99f6e4;
+  font-family: var(--nav-font);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contact-intro h3 {
+  color: #ffffff;
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.contact-intro p {
+  color: #cbd5e1;
+  line-height: 1.8;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-actions .btn-secondary-outline {
+  color: #e2e8f0;
+  border-color: rgba(226, 232, 240, 0.45);
+}
+
+.contact-actions .btn-secondary-outline:hover {
+  color: #0f172a;
+  background: #ffffff;
+}
+
 .contact .info-item+.info-item {
   margin-top: 22px;
 }
@@ -2447,6 +2504,15 @@ section,
 
 .contact .info-item i {
   background: #ccfbf1;
+}
+
+.contact .info-item a {
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.contact .info-item a:hover {
+  color: #14b8a6;
 }
 
 .footer {
@@ -2479,7 +2545,7 @@ section,
   }
 
   .hero {
-    min-height: 92vh;
+    min-height: 111.111vh;
   }
 
   .about .content ul li {

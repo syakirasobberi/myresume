@@ -30,7 +30,7 @@ $profile = $content['profile'];
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=<?= filemtime(__DIR__ . '/assets/css/main.css') ?>" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: MyResume

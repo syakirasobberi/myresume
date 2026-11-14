@@ -45,7 +45,7 @@ $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$i
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/main.css?v=<?= filemtime(__DIR__ . '/assets/css/main.css') ?>" rel="stylesheet">
 </head>
 
 <body class="project-details-page">
