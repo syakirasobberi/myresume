@@ -21,7 +21,7 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
             <div class="contact-card contact-intro h-100">
               <span class="contact-eyebrow">Let’s Connect</span>
               <h3>Open to web development, software engineering, and QA opportunities.</h3>
-              <p>I am available for internship, graduate trainee, junior developer, and QA analyst roles. Reach out if my skills and background match your team’s needs.</p>
+              <p>I am available for graduate trainee, junior developer, and QA analyst roles. Reach out if my skills and background match your team’s needs.</p>
 
               <div class="contact-actions">
                 <a href="mailto:<?= h($about['email']) ?>" class="btn-primary-outline">Email Me</a>

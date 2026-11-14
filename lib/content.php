@@ -48,7 +48,7 @@ function resume_default_content()
         'tech_stack' => ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'Katalon', 'Git', 'UI/UX', 'Documentation'],
         'cta' => [
             'label' => 'Open To Opportunities',
-            'title' => 'Available for internship, graduate trainee, junior developer, and QA analyst roles.',
+            'title' => 'Available for graduate trainee, junior developer, and QA analyst roles.',
             'text' => 'I am ready to contribute to professional software teams through web development, testing, documentation, and continuous improvement.',
         ],
         'resume' => [
