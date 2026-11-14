@@ -8,7 +8,7 @@ $cta = $content['cta'] ?? [];
   <div class="container" data-aos="zoom-in">
     <div class="hire-cta-card">
       <span><?= h($cta['label'] ?? 'Open To Opportunities') ?></span>
-      <h2><?= h($cta['title'] ?? 'Available for internship, graduate trainee, junior developer, and QA analyst roles.') ?></h2>
+      <h2><?= h($cta['title'] ?? 'Available for graduate trainee, junior developer, business analyst, and QA analyst roles.') ?></h2>
       <p><?= h($cta['text'] ?? 'I am ready to contribute to professional software teams through web development, testing, documentation, and continuous improvement.') ?></p>
       <div class="hire-cta-actions">
         <a href="#contact" class="btn-primary-outline">Contact Me</a>
