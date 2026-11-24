@@ -89,10 +89,6 @@ $profile = $content['profile'];
     <?php include 'highlights.php'; ?>
     <!-- /Highlights Section -->
 
-    <!-- Tech Stack Section -->
-    <?php include 'techstack.php'; ?>
-    <!-- /Tech Stack Section -->
-
     <!-- Skills Section -->
     <?php include 'skills.php'; ?>
     <!-- /Skills Section -->

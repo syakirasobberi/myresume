@@ -12,7 +12,7 @@ function resume_default_content()
             'name' => 'Nurul Syakirah',
             'headline' => 'Software Engineering Student & Web Developer',
             'typed_items' => 'Web Developer, QA Analyst, Software Engineering Student',
-            'background_image' => 'assets/img/bg1.png',
+            'background_image' => 'assets/img/bg1.jpg',
             'profile_image' => 'assets/img/profile1.jpg',
             'facebook' => 'https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr',
             'instagram' => 'https://www.instagram.com/sykirahs',
@@ -32,12 +32,10 @@ function resume_default_content()
             'details' => 'Completed internship experience at Pejabat Daerah Perak Tengah and Synergy Alliance Sdn. Bhd., contributing to internal systems, application testing, responsive interfaces, and project documentation.',
         ],
         'skills' => [
-            ['id' => 1, 'name' => 'HTML', 'percentage' => 100],
-            ['id' => 2, 'name' => 'CSS', 'percentage' => 90],
-            ['id' => 3, 'name' => 'JavaScript', 'percentage' => 50],
-            ['id' => 4, 'name' => 'PHP', 'percentage' => 80],
-            ['id' => 5, 'name' => 'WordPress/CMS', 'percentage' => 70],
-            ['id' => 6, 'name' => 'Photoshop', 'percentage' => 55],
+            ['id' => 1, 'title' => 'Frontend', 'icon' => 'bi-window', 'items' => ['HTML', 'CSS', 'JavaScript', 'Bootstrap', 'Tailwind CSS']],
+            ['id' => 2, 'title' => 'Backend & Database', 'icon' => 'bi-server', 'items' => ['PHP', 'Laravel', 'MySQL']],
+            ['id' => 3, 'title' => 'QA & Testing', 'icon' => 'bi-bug', 'items' => ['Katalon', 'User Acceptance Testing (UAT)', 'Test Case Documentation', 'System Usability Scale (SUS)']],
+            ['id' => 4, 'title' => 'Tools & Design', 'icon' => 'bi-tools', 'items' => ['Git', 'UI/UX Design', 'Photoshop', 'Technical Documentation']],
         ],
         'highlights' => [
             ['icon' => 'bi-code-slash', 'title' => 'Web Development', 'description' => 'Experience building PHP, Laravel, JavaScript, and database-backed web systems.'],
@@ -45,7 +43,6 @@ function resume_default_content()
             ['icon' => 'bi-check2-circle', 'title' => 'Project Delivery', 'description' => 'Completed academic and internship projects with documentation, UI work, and testing support.'],
             ['icon' => 'bi-people', 'title' => 'Team Ready', 'description' => 'Prepared to contribute in structured teams with clear communication and continuous learning.'],
         ],
-        'tech_stack' => ['HTML', 'CSS', 'JavaScript', 'PHP', 'Laravel', 'MySQL', 'Bootstrap', 'Tailwind CSS', 'Katalon', 'Git', 'UI/UX', 'Documentation'],
         'cta' => [
             'label' => 'Open To Opportunities',
             'title' => 'Available for graduate trainee, junior developer, business analyst, and QA analyst roles.',
@@ -59,19 +56,19 @@ function resume_default_content()
             'summary_phone' => '(60) 12-5764231',
             'summary_website' => 'http://d09097.schtg.com/',
             'education' => [
-                ['id' => 1, 'title' => 'Bachelor of Software Engineering (Hons.)', 'period' => '2021 - 2023', 'institution' => 'Universiti Pendidikan Sultan Idris, Tanjung Malim, Perak', 'description' => 'Focusing on software development, web application engineering, UI/UX design, and system analysis. Currently developing a multimedia learning platform as a final year project.'],
-                ['id' => 2, 'title' => 'Diploma in Computer Science', 'period' => '2021-2023', 'institution' => 'Universiti Pendidikan Sultan Idris, Tanjung Malim, Perak', 'description' => 'Focusing on learning in basic develop website.'],
+                ['id' => 1, 'title' => 'Bachelor of Software Engineering (Hons.)', 'period' => '2023-2027', 'institution' => 'Universiti Pendidikan Sultan Idris, Tanjung Malim, Perak', 'description' => "Focusing on software development, web application engineering, UI/UX design, and system analysis.\nFinal year project: PharmaTrack, a Laravel-based patient and medication record system for community pharmacies."],
+                ['id' => 2, 'title' => 'Diploma in Computer Science', 'period' => '2021-2023', 'institution' => 'Universiti Pendidikan Sultan Idris, Tanjung Malim, Perak', 'description' => "Covered programming, web development, and database fundamentals.\nFinal year project: Bike4U, a PHP and MySQL bicycle booking system presented at DICE 2023 and evaluated with 39 respondents using the System Usability Scale."],
             ],
             'experience' => [
+                ['id' => 4, 'title' => 'Internship - Information Technology Trainee', 'period' => '2026', 'institution' => 'Synergy Alliance Sdn. Bhd.', 'description' => "Tested application functionality as a QA Analyst using Katalon.\nBuilt and implemented UI components as a Web Developer.\nUsed AI-assisted development tools to speed up coding, debugging, and testing tasks."],
                 ['id' => 1, 'title' => 'Internship - Web Developer', 'period' => 'June 2023 - August 2023', 'institution' => 'Pejabat Daerah Perak Tengah', 'description' => "Assisted in maintaining and enhancing internal web systems for district administration.\nCollaborated with senior developers to troubleshoot and resolve software issues.\nParticipated in UI improvements and responsive design updates for official portals."],
-                ['id' => 2, 'title' => 'Final Year Project - Bicycle Rental website', 'period' => '2017 - 2018', 'institution' => 'Universiti Pendidikan Sultan Idris, Tanjung Malim, Perak', 'description' => "Designing UI using modern frameworks and ensuring accessibility across devices.\nConducting user testing and performance optimization for enhanced usability."],
             ],
         ],
         'portfolio' => [
             'intro' => 'Selected projects showing practical experience in web application development, UI/UX design, QA testing, and system documentation. Each item reflects applied coursework, internship tasks, or independent software delivery.',
             'items' => [
-                ['id' => 1, 'title' => 'Bicycle Renting System', 'category' => 'Projects', 'description' => 'Final Year Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-1.png', 'link' => '#'],
-                ['id' => 2, 'title' => 'District Office Web System', 'category' => 'Internship', 'description' => 'Internship Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-2.png', 'link' => '#'],
+                ['id' => 1, 'title' => 'Bicycle Renting System', 'category' => 'Projects', 'description' => 'Final Year Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-1.jpg', 'link' => '#'],
+                ['id' => 2, 'title' => 'District Office Web System', 'category' => 'Internship', 'description' => 'Internship Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-2.jpg', 'link' => '#'],
                 ['id' => 3, 'title' => 'UI/UX Redesign', 'category' => 'Assignments', 'description' => 'Class Project', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-3.jpg', 'link' => '#'],
                 ['id' => 4, 'title' => 'Register Form', 'category' => 'Assignments', 'description' => 'Authentication System', 'image' => 'assets/img/masonry-portfolio/masonry-portfolio-6.png', 'link' => '#'],
             ],

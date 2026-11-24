@@ -1,16 +1,25 @@
 <?php
 require_once __DIR__ . '/_bootstrap.php';
 
-$validUsername = getenv('MYRESUME_ADMIN_USER') ?: 'admin';
-$validPassword = getenv('MYRESUME_ADMIN_PASSWORD') ?: 'admin1234';
-$error = '';
+// Credentials come from admin/config.php (not committed; see config.example.php).
+// There is deliberately no fallback password: without a config file, login is disabled.
+$config = is_file(__DIR__ . '/config.php') ? require __DIR__ . '/config.php' : [];
+$validUsername = (string)($config['username'] ?? '');
+$passwordHash = (string)($config['password_hash'] ?? '');
+$configured = $validUsername !== '' && $passwordHash !== '';
+$error = $configured ? '' : 'Admin login is disabled until admin/config.php is set up. See admin/config.example.php.';
 
-if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
-    if (admin_post('username') === $validUsername && admin_post('password') === $validPassword) {
+if ($configured && ($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
+    $usernameOk = hash_equals($validUsername, admin_post('username'));
+    $passwordOk = password_verify(admin_post('password'), $passwordHash);
+
+    if ($usernameOk && $passwordOk) {
+        session_regenerate_id(true);
         $_SESSION['myresume_admin'] = true;
         admin_redirect('index.php');
     }
 
+    sleep(1); // slow down password guessing
     $error = 'Invalid username or password.';
 }
 ?>

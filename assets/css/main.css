@@ -1803,27 +1803,60 @@ section,
   font-weight: 600;
 }
 
-.skills .progress {
-  height: auto;
-  margin-bottom: 28px;
+.skill-group {
+  height: 100%;
+  padding: 26px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
 }
 
-.skills .progress .skill {
-  color: #1e293b;
-  letter-spacing: 0.02em;
+.skill-group-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
 }
 
-.skills .progress-bar-wrap {
-  height: 12px;
+.skill-group-head i {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  color: #0f766e;
+  background: #ccfbf1;
+  font-size: 20px;
+}
+
+.skill-group-head h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.skill-tags li {
+  padding: 7px 13px;
+  border: 1px solid #ccfbf1;
   border-radius: 999px;
-  background: #e2e8f0;
-  overflow: hidden;
-}
-
-.skills .progress-bar {
-  height: 12px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #0f766e, #14b8a6);
+  color: #0f766e;
+  background: #f0fdfa;
+  font-family: var(--nav-font);
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .resume-grid>div {

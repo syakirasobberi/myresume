@@ -20,7 +20,7 @@ if (!$project) {
 }
 
 $details = $project ? resume_project_detail_for($project) : null;
-$image = $project['image'] ?? 'assets/img/masonry-portfolio/masonry-portfolio-1.png';
+$image = $project['image'] ?? 'assets/img/masonry-portfolio/masonry-portfolio-1.jpg';
 $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$image], $details['screenshots'])))) : [];
 ?>
 <!DOCTYPE html>

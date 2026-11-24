@@ -36,7 +36,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     }
 
     $content['highlights'] = $highlights;
-    $content['tech_stack'] = admin_list_from_text(admin_post('tech_stack'));
+    unset($content['tech_stack']);
     $content['cta'] = [
         'label' => admin_post('cta_label'),
         'title' => admin_post('cta_title'),
@@ -49,7 +49,6 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
 $profile = $content['profile'];
 $about = $content['about'];
 $highlights = $content['highlights'] ?? [];
-$techStack = $content['tech_stack'] ?? [];
 $cta = $content['cta'] ?? [];
 admin_header('About');
 ?>
@@ -100,12 +99,6 @@ admin_header('About');
                 </div>
             </div>
             <?php endfor; ?>
-        </div>
-
-        <hr class="my-4">
-        <h2 class="h5 mb-3">Tech Stack</h2>
-        <div class="row g-3">
-            <div class="col-12"><label class="form-label">Tools & Technologies</label><textarea class="form-control" name="tech_stack"><?= h(admin_text_from_list($techStack)) ?></textarea><div class="form-text">Enter one item per line or separate with commas.</div></div>
         </div>
 
         <hr class="my-4">

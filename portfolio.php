@@ -27,7 +27,7 @@ $portfolio = $content['portfolio'];
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
 
             <?php foreach ($portfolio['items'] as $item): ?>
-            <?php $image = $item['image'] ?: 'assets/img/masonry-portfolio/masonry-portfolio-1.png'; ?>
+            <?php $image = $item['image'] ?: 'assets/img/masonry-portfolio/masonry-portfolio-1.jpg'; ?>
             <?php $details = resume_project_detail_for($item); ?>
             <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= h(resume_filter_class($item['category'])) ?>">
               <div class="portfolio-card">
