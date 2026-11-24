@@ -22,6 +22,11 @@ if (!$project) {
 $details = $project ? resume_project_detail_for($project) : null;
 $image = $project['image'] ?? 'assets/img/masonry-portfolio/masonry-portfolio-1.jpg';
 $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$image], $details['screenshots'])))) : [];
+
+$metaTitle = $project ? $project['title'] . ' — Project by ' . $profile['name'] : 'Project Not Found';
+$metaDescription = $project ? $project['description'] . '. ' . $details['outcome'] : 'Project details page';
+$metaImage = $project ? $image : 'assets/img/og-image.jpg';
+$metaPath = 'project-details.php?id=' . $projectId;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +34,7 @@ $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$i
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title><?= $project ? h($project['title']) . ' | Project Details' : 'Project Not Found' ?></title>
-  <meta content="<?= $project ? h($details['outcome']) : 'Project details page' ?>" name="description">
+<?php include 'meta-tags.php'; ?>
 
   <link href="assets/img/Slogo.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">

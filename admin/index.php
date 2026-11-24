@@ -84,7 +84,7 @@ admin_header('About');
             <input type="hidden" name="age" value="<?= h($about['age']) ?>">
             <div class="col-md-6"><label class="form-label">Degree</label><input class="form-control" name="degree" value="<?= h($about['degree']) ?>"></div>
             <div class="col-md-6"><label class="form-label">Email</label><input class="form-control" type="email" name="email" value="<?= h($about['email']) ?>"></div>
-            <div class="col-md-6"><label class="form-label">Freelance</label><input class="form-control" name="freelance" value="<?= h($about['freelance']) ?>"></div>
+            <div class="col-md-6"><label class="form-label">Availability</label><input class="form-control" name="freelance" value="<?= h($about['freelance']) ?>"></div>
             <div class="col-12"><label class="form-label">Details Paragraph</label><textarea class="form-control" name="details"><?= h($about['details']) ?></textarea></div>
         </div>
 

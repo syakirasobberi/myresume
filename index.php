@@ -2,6 +2,13 @@
 require_once __DIR__ . '/lib/content.php';
 $content = resume_get_content();
 $profile = $content['profile'];
+
+$metaTitle = $profile['name'] . ' — Web Developer & QA Analyst | Software Engineering Portfolio';
+$metaDescription = 'Portfolio of ' . $profile['name'] . ', a Software Engineering student at UPSI (graduating 2027) with web development and QA testing experience in Laravel, PHP, MySQL and Katalon.';
+$metaImage = 'assets/img/og-image.jpg';
+$metaPath = '';
+
+$resumePdf = 'assets/resume/Nurul-Syakirah-Resume.pdf';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +16,7 @@ $profile = $content['profile'];
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Syakirah's Resume</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<?php include 'meta-tags.php'; ?>
 
   <!-- Favicons -->
   <link href="assets/img/Slogo.png" rel="icon">
@@ -66,7 +71,7 @@ $profile = $content['profile'];
             <p class="hero-subtitle">Aspiring <span class="typed" data-typed-items="<?= h($profile['typed_items']) ?>"><?= h(strtok($profile['typed_items'], ',')) ?></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span> focused on reliable web systems, clean user experiences, and continuous learning.</p>
             <div class="hero-actions">
               <a href="#resume" class="btn-primary-outline">View Resume</a>
-              <button type="button" class="btn-secondary-outline hero-print-button" onclick="window.print()">Save Resume PDF</button>
+              <?php if (is_file(__DIR__ . '/' . $resumePdf)): ?><a href="<?= h($resumePdf) ?>?v=<?= filemtime(__DIR__ . '/' . $resumePdf) ?>" class="btn-secondary-outline" download="Nurul-Syakirah-Resume.pdf"><i class="bi bi-download me-2" aria-hidden="true"></i>Download CV (PDF)</a><?php endif; ?>
               <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
               <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">GitHub</a><?php endif; ?>
               <a href="#contact" class="btn-secondary-outline">Contact Me</a>

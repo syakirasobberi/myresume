@@ -14,9 +14,9 @@ function resume_default_content()
             'typed_items' => 'Web Developer, QA Analyst, Software Engineering Student',
             'background_image' => 'assets/img/bg1.jpg',
             'profile_image' => 'assets/img/profile1.jpg',
-            'facebook' => 'https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr',
-            'instagram' => 'https://www.instagram.com/sykirahs',
-            'linkedin' => 'https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+            'facebook' => '',
+            'instagram' => '',
+            'linkedin' => 'https://www.linkedin.com/in/nurul-syakirah-b553072a6',
             'github' => 'https://github.com/syakirasobberi',
         ],
         'about' => [
@@ -28,8 +28,8 @@ function resume_default_content()
             'city' => 'Seri Iskandar, Perak, Malaysia',
             'age' => '21',
             'degree' => "Bachelor's in Software Engineering",
-            'email' => 'Syakirahnurul438@gmail.com',
-            'freelance' => 'available',
+            'email' => 'syakirahnurul438@gmail.com',
+            'freelance' => 'Graduating 2027 · open to graduate roles',
             'details' => 'Completed internship experience at Pejabat Daerah Perak Tengah and Synergy Alliance Sdn. Bhd., contributing to internal systems, application testing, responsive interfaces, and project documentation.',
         ],
         'skills' => [
@@ -161,6 +161,21 @@ function resume_url($value)
 {
     $value = trim((string)$value);
     return preg_match('#^https?://#i', $value) ? $value : '';
+}
+
+/**
+ * Absolute URL of the site root (e.g. https://example.com/ or http://localhost:8080/MyResume/),
+ * worked out from the current request so it is right on any host. Link previews need absolute URLs.
+ */
+function resume_base_url()
+{
+    $https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+        || (($_SERVER['HTTP_X_FORWARDED_PROTO'] ?? '') === 'https');
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $dir = str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/'));
+    $dir = rtrim($dir, '/') . '/';
+
+    return ($https ? 'https' : 'http') . '://' . $host . $dir;
 }
 
 function resume_filter_class($category)

@@ -5,9 +5,9 @@
         "typed_items": "Web Developer, QA Analyst, Software Engineering Student",
         "background_image": "assets/img/bg1.jpg",
         "profile_image": "assets/img/profile1.jpg",
-        "facebook": "https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr",
-        "instagram": "https://www.instagram.com/sykirahs",
-        "linkedin": "https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "facebook": "",
+        "instagram": "",
+        "linkedin": "https://www.linkedin.com/in/nurul-syakirah-b553072a6",
         "github": "https://github.com/syakirasobberi"
     },
     "about": {
@@ -19,8 +19,8 @@
         "city": "Seri Iskandar, Perak, Malaysia",
         "age": "23",
         "degree": "Bachelor's in Software Engineering",
-        "email": "Syakirahnurul438@gmail.com",
-        "freelance": "available",
+        "email": "syakirahnurul438@gmail.com",
+        "freelance": "Graduating 2027 \u00b7 open to graduate roles",
         "details": "Completed internship experience at Pejabat Daerah Perak Tengah and Synergy Alliance Sdn. Bhd., contributing to internal systems, application testing, responsive interfaces, and project documentation."
     },
     "skills": [
