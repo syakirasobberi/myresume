@@ -86,6 +86,29 @@
       once: true,
       mirror: false
     });
+    revealOnScroll();
+  }
+
+  /**
+   * AOS works out element positions with offsetTop, which is wrong when the page
+   * uses CSS `zoom` (see body in main.css): elements were revealed hundreds of pixels
+   * late, leaving blank sections on screen. IntersectionObserver uses the real on-screen
+   * position, so it triggers the same AOS animation at the right moment.
+   */
+  let revealObserver = null;
+  function revealOnScroll() {
+    if (revealObserver || !('IntersectionObserver' in window)) return;
+    revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('[data-aos]').forEach(function(el) {
+      revealObserver.observe(el);
+    });
   }
   window.addEventListener('load', aosInit);
 

@@ -26,6 +26,7 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
               <div class="contact-actions">
                 <a href="mailto:<?= h($about['email']) ?>" class="btn-primary-outline">Email Me</a>
                 <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
+                <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">GitHub</a><?php endif; ?>
               </div>
             </div>
           </div>
@@ -62,6 +63,16 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
                 <div>
                   <h3>LinkedIn</h3>
                   <p><a href="<?= h($profile['linkedin']) ?>">View my LinkedIn profile</a></p>
+                </div>
+              </div><!-- End Info Item -->
+              <?php endif; ?>
+
+              <?php if (!empty($profile['github'])): ?>
+              <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="600">
+                <i class="bi bi-github flex-shrink-0"></i>
+                <div>
+                  <h3>GitHub</h3>
+                  <p><a href="<?= h($profile['github']) ?>" target="_blank" rel="noopener">View my code on GitHub</a></p>
                 </div>
               </div><!-- End Info Item -->
               <?php endif; ?>

@@ -73,6 +73,8 @@ $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$i
               <p><?= h($project['description']) ?></p>
               <div class="project-actions">
                 <a href="#project-content" class="btn-primary-outline">View Case Study</a>
+                <?php if ($github = resume_url($project['github'] ?? '')): ?><a href="<?= h($github) ?>" class="btn-secondary-outline" target="_blank" rel="noopener"><i class="bi bi-github me-2" aria-hidden="true"></i>Source Code</a><?php endif; ?>
+                <?php if ($demo = resume_url($project['link'] ?? '')): ?><a href="<?= h($demo) ?>" class="btn-secondary-outline" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right me-2" aria-hidden="true"></i>Live Demo</a><?php endif; ?>
                 <a href="<?= h($image) ?>" class="btn-secondary-outline glightbox" data-gallery="project-screenshots">Open Screenshot</a>
               </div>
             </div>
@@ -160,7 +162,7 @@ $screenshots = $project ? array_values(array_unique(array_filter(array_merge([$i
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=<?= filemtime(__DIR__ . '/assets/js/main.js') ?>"></script>
 </body>
 
 </html>

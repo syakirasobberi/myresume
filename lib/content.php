@@ -17,6 +17,7 @@ function resume_default_content()
             'facebook' => 'https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr',
             'instagram' => 'https://www.instagram.com/sykirahs',
             'linkedin' => 'https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+            'github' => 'https://github.com/syakirasobberi',
         ],
         'about' => [
             'intro' => 'I am Nurul Syakirah, a Software Engineering student focused on building practical, reliable, and user-friendly web applications. My experience includes academic software projects, QA testing, UI improvements, and internship exposure in government and corporate environments. I am seeking opportunities to contribute to professional technology teams while continuing to strengthen my engineering and problem-solving skills.',
@@ -151,6 +152,15 @@ function resume_next_id(array $items)
 function h($value)
 {
     return htmlspecialchars((string)$value, ENT_QUOTES, 'UTF-8');
+}
+
+/**
+ * Returns a usable external URL, or '' for empty / placeholder values like '#'.
+ */
+function resume_url($value)
+{
+    $value = trim((string)$value);
+    return preg_match('#^https?://#i', $value) ? $value : '';
 }
 
 function resume_filter_class($category)

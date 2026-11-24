@@ -68,12 +68,11 @@ $profile = $content['profile'];
               <a href="#resume" class="btn-primary-outline">View Resume</a>
               <button type="button" class="btn-secondary-outline hero-print-button" onclick="window.print()">Save Resume PDF</button>
               <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
+              <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">GitHub</a><?php endif; ?>
               <a href="#contact" class="btn-secondary-outline">Contact Me</a>
             </div>
             <div class="social-links">
-              <?php if (!empty($profile['facebook'])): ?><a href="<?= h($profile['facebook']) ?>"><i class="bi bi-facebook"></i></a><?php endif; ?>
-              <?php if (!empty($profile['instagram'])): ?><a href="<?= h($profile['instagram']) ?>"><i class="bi bi-instagram"></i></a><?php endif; ?>
-              <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>"><i class="bi bi-linkedin"></i></a><?php endif; ?>
+              <?php include 'social-links.php'; ?>
             </div>
           </div>
         </div>
@@ -131,7 +130,7 @@ $profile = $content['profile'];
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=<?= filemtime(__DIR__ . '/assets/js/main.js') ?>"></script>
 
 </body>
 

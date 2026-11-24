@@ -12,6 +12,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     $content['profile']['facebook'] = admin_post('facebook');
     $content['profile']['instagram'] = admin_post('instagram');
     $content['profile']['linkedin'] = admin_post('linkedin');
+    $content['profile']['github'] = admin_post('github');
     $content['profile']['background_image'] = admin_upload_image('background_image', $content['profile']['background_image']);
     $content['profile']['profile_image'] = admin_upload_image('profile_image', $content['profile']['profile_image']);
 
@@ -68,6 +69,7 @@ admin_header('About');
             <div class="col-md-6"><label class="form-label">Facebook URL</label><input class="form-control" name="facebook" value="<?= h($profile['facebook']) ?>"></div>
             <div class="col-md-6"><label class="form-label">Instagram URL</label><input class="form-control" name="instagram" value="<?= h($profile['instagram']) ?>"></div>
             <div class="col-md-6"><label class="form-label">LinkedIn URL</label><input class="form-control" name="linkedin" value="<?= h($profile['linkedin']) ?>"></div>
+            <div class="col-md-6"><label class="form-label">GitHub URL</label><input class="form-control" name="github" value="<?= h($profile['github'] ?? '') ?>"></div>
         </div>
 
         <hr class="my-4">

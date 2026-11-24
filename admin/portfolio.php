@@ -33,6 +33,8 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
             'description' => admin_post('description'),
             'image' => admin_upload_image('image', $currentImage),
             'link' => admin_post('link') ?: '#',
+            'github' => admin_post('github'),
+            'featured' => !empty($_POST['featured']),
             'problem' => admin_post('problem'),
             'role' => admin_post('role'),
             'technologies' => admin_list_from_text(admin_post('technologies')),
@@ -40,6 +42,13 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
             'outcome' => admin_post('outcome'),
             'screenshots' => admin_list_from_text(admin_post('screenshots')),
         ];
+
+        // Only one project can be featured at a time.
+        if ($item['featured']) {
+            foreach ($items as $index => $row) {
+                $items[$index]['featured'] = false;
+            }
+        }
 
         if ($id) {
             foreach ($items as $index => $row) {
@@ -78,7 +87,9 @@ admin_header('Portfolio');
                 <div class="mb-3"><label class="form-label">Category</label><select class="form-select" name="category"><option <?= (($editing['category'] ?? '') === 'Projects') ? 'selected' : '' ?>>Projects</option><option <?= (($editing['category'] ?? '') === 'Internship') ? 'selected' : '' ?>>Internship</option><option <?= (($editing['category'] ?? '') === 'Assignments') ? 'selected' : '' ?>>Assignments</option></select></div>
                 <div class="mb-3"><label class="form-label">Description</label><textarea class="form-control" name="description"><?= h($editing['description'] ?? '') ?></textarea></div>
                 <div class="mb-3"><label class="form-label">Image</label><input class="form-control" type="file" name="image" accept="image/*"><div class="form-text">Current: <?= h($editing['image'] ?? 'none') ?></div></div>
-                <div class="mb-3"><label class="form-label">Link</label><input class="form-control" name="link" value="<?= h($editing['link'] ?? '#') ?>"></div>
+                <div class="mb-3"><label class="form-label">GitHub URL</label><input class="form-control" name="github" value="<?= h($editing['github'] ?? '') ?>" placeholder="https://github.com/..."></div>
+                <div class="mb-3"><label class="form-label">Live Demo URL</label><input class="form-control" name="link" value="<?= h($editing['link'] ?? '') ?>" placeholder="https://..."><div class="form-text">Leave empty if there is no live demo.</div></div>
+                <div class="form-check mb-3"><input class="form-check-input" type="checkbox" name="featured" value="1" id="featured" <?= !empty($editing['featured']) ? 'checked' : '' ?>><label class="form-check-label" for="featured">Featured project (shown large above the portfolio grid)</label></div>
                 <hr>
                 <h3 class="h6 mb-3">Project Details Page</h3>
                 <div class="mb-3"><label class="form-label">Problem Statement</label><textarea class="form-control" name="problem"><?= h($editing['problem'] ?? '') ?></textarea></div>
@@ -96,7 +107,7 @@ admin_header('Portfolio');
         <div class="card"><div class="card-body table-responsive">
             <table class="table align-middle"><thead><tr><th>Project</th><th>Category</th><th class="text-end">Actions</th></tr></thead><tbody>
                 <?php foreach ($items as $item): ?>
-                <tr><td><?= h($item['title']) ?><br><small class="text-muted"><?= h($item['description']) ?></small></td><td><?= h($item['category']) ?></td><td class="text-end"><a class="btn btn-sm btn-outline-secondary" target="_blank" href="../project-details.php?id=<?= h($item['id']) ?>">View</a> <a class="btn btn-sm btn-outline-primary" href="portfolio.php?edit=<?= h($item['id']) ?>">Edit</a> <form class="d-inline" method="post" onsubmit="return confirm('Delete this portfolio item?')"><input type="hidden" name="action" value="delete"><input type="hidden" name="id" value="<?= h($item['id']) ?>"><button class="btn btn-sm btn-outline-danger">Delete</button></form></td></tr>
+                <tr><td><?= h($item['title']) ?><?php if (!empty($item['featured'])): ?> <span class="badge text-bg-warning">Featured</span><?php endif; ?><br><small class="text-muted"><?= h($item['description']) ?></small></td><td><?= h($item['category']) ?></td><td class="text-end"><a class="btn btn-sm btn-outline-secondary" target="_blank" href="../project-details.php?id=<?= h($item['id']) ?>">View</a> <a class="btn btn-sm btn-outline-primary" href="portfolio.php?edit=<?= h($item['id']) ?>">Edit</a> <form class="d-inline" method="post" onsubmit="return confirm('Delete this portfolio item?')"><input type="hidden" name="action" value="delete"><input type="hidden" name="id" value="<?= h($item['id']) ?>"><button class="btn btn-sm btn-outline-danger">Delete</button></form></td></tr>
                 <?php endforeach; ?>
             </tbody></table>
         </div></div>

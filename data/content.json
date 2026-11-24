@@ -7,7 +7,8 @@
         "profile_image": "assets/img/profile1.jpg",
         "facebook": "https://www.facebook.com/share/1FxBo2mosS/?mibextid=wwXIfr",
         "instagram": "https://www.instagram.com/sykirahs",
-        "linkedin": "https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        "linkedin": "https://www.linkedin.com/in/nurul-syakirah-b553072a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "github": "https://github.com/syakirasobberi"
     },
     "about": {
         "intro": "I am Nurul Syakirah, a Software Engineering student focused on building practical, reliable, and user-friendly web applications. My experience includes academic software projects, QA testing, UI improvements, and internship exposure in government and corporate environments. I am seeking opportunities to contribute to professional technology teams while continuing to strengthen my engineering and problem-solving skills.",
@@ -139,6 +140,42 @@
         "intro": "Selected projects showing practical experience in web application development, UI/UX design, QA testing, and system documentation. Each item reflects applied coursework, internship tasks, or independent software delivery.",
         "items": [
             {
+                "id": 5,
+                "title": "PharmaTrack",
+                "category": "Projects",
+                "description": "Degree Final Year Project: AI-enabled clinical decision support system for community pharmacies",
+                "image": "assets/img/projects/pharmatrack/kiosk-home.jpg",
+                "link": "#",
+                "problem": "Community pharmacies often manage patient health and medication records manually, which leads to scattered records, slower check-ins, and harder follow-up on patients who need monitoring.",
+                "role": "Full-stack Laravel developer and QA tester: designed and built the system, integrated face recognition, OCR, and risk prediction, and planned and ran UAT.",
+                "technologies": [
+                    "Laravel 12",
+                    "MySQL",
+                    "Tailwind CSS",
+                    "Face-API.js",
+                    "OCR",
+                    "Python",
+                    "scikit-learn"
+                ],
+                "features": [
+                    "Face-recognition kiosk check-in for registered patients",
+                    "Admin command center for staff accounts, patient overview, and reports",
+                    "OCR autofill that reads vitals and lab values from check-up reports",
+                    "Health risk prediction using a decision tree model (scikit-learn)",
+                    "Patient portal with medication schedule, check-up history, and reminders",
+                    "Health summary PDF download and email"
+                ],
+                "outcome": "Achieved a 100% pass rate across 26 UAT test cases with 8 respondents, validating the core pharmacist, admin, and patient workflows.",
+                "screenshots": [
+                    "assets/img/projects/pharmatrack/kiosk-steps.jpg",
+                    "assets/img/projects/pharmatrack/admin-dashboard.jpg",
+                    "assets/img/projects/pharmatrack/medication-schedule.jpg",
+                    "admin/uploads/20260925160557-1d9a590f.jpg"
+                ],
+                "github": "https://github.com/syakirasobberi/pharmatrack",
+                "featured": true
+            },
+            {
                 "id": 1,
                 "title": "Bicycle Renting System",
                 "category": "Projects",
@@ -161,7 +198,9 @@
                     "Responsive pages for desktop and mobile users"
                 ],
                 "outcome": "Delivered a diploma final year project that demonstrates CRUD flow, form handling, and practical web application structure.",
-                "screenshots": []
+                "screenshots": [],
+                "github": "",
+                "featured": false
             },
             {
                 "id": 2,
@@ -185,7 +224,9 @@
                     "Content and layout updates for official use"
                 ],
                 "outcome": "Gained real workplace exposure by supporting internal government web systems and collaborating with senior staff.",
-                "screenshots": []
+                "screenshots": [],
+                "github": "",
+                "featured": false
             },
             {
                 "id": 3,
@@ -209,7 +250,9 @@
                     "User-centered screen flow improvements"
                 ],
                 "outcome": "Produced a cleaner interface concept that improved usability, structure, and professional presentation.",
-                "screenshots": []
+                "screenshots": [],
+                "github": "",
+                "featured": false
             },
             {
                 "id": 4,
@@ -233,34 +276,9 @@
                     "Clean form styling for better readability"
                 ],
                 "outcome": "Created a practical authentication interface component that demonstrates frontend structure and user input handling.",
-                "screenshots": []
-            },
-            {
-                "id": 5,
-                "title": "PharmaTrack",
-                "category": "Projects",
-                "description": "Degree Final Year Project",
-                "image": "admin/uploads/20260925160557-1d9a590f.jpg",
-                "link": "#",
-                "problem": "Community pharmacies often manage patient health and medication records manually, causing scattered records and slower monitoring.",
-                "role": "Laravel developer and QA tester responsible for feature implementation, interface support, testing, and UAT documentation.",
-                "technologies": [
-                    "Laravel 12",
-                    "MySQL",
-                    "Tailwind CSS",
-                    "Face-API.js",
-                    "OCR",
-                    "Katalon"
-                ],
-                "features": [
-                    "Patient registration and profile management",
-                    "Medication tracking and health monitoring records",
-                    "AI-assisted recommendation concept",
-                    "Face recognition and OCR-supported workflow",
-                    "UAT test cases and quality validation"
-                ],
-                "outcome": "Achieved 100% pass rate across 26 UAT test cases with 8 respondents, showing successful validation of core workflows.",
-                "screenshots": []
+                "screenshots": [],
+                "github": "",
+                "featured": false
             }
         ]
     }

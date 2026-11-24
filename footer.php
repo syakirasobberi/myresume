@@ -8,9 +8,7 @@ $profile = $content['profile'];
       <h3 class="sitename"><?= h($profile['name']) ?></h3>
       <p>Professional portfolio showcasing software engineering, QA, and web development experience.</p>
       <div class="social-links d-flex justify-content-center">
-        <?php if (!empty($profile['facebook'])): ?><a href="<?= h($profile['facebook']) ?>"><i class="bi bi-facebook"></i></a><?php endif; ?>
-        <?php if (!empty($profile['instagram'])): ?><a href="<?= h($profile['instagram']) ?>"><i class="bi bi-instagram"></i></a><?php endif; ?>
-        <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>"><i class="bi bi-linkedin"></i></a><?php endif; ?>
+        <?php include __DIR__ . '/social-links.php'; ?>
       </div>
       <div class="container">
         <div class="copyright">
