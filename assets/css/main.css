@@ -2715,3 +2715,30 @@ section,
     flex-wrap: wrap;
   }
 }
+
+/* Mobile sidebar: panel sized to its buttons, dimmed backdrop, no background scroll */
+@media (max-width: 1199px) {
+  .header {
+    width: 220px;
+    max-width: 80vw;
+    min-width: 0;
+    padding: 0 20px;
+    box-shadow: 12px 0 32px rgba(15, 23, 42, 0.18);
+  }
+
+  .header .navmenu ul {
+    width: 100%;
+  }
+
+  body.mobile-nav-open {
+    overflow: hidden;
+  }
+
+  body.mobile-nav-open::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.5);
+    z-index: 996;
+  }
+}

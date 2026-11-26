@@ -15,11 +15,19 @@
   const headerToggleBtn = document.querySelector('.header-toggle');
 
   function headerToggle() {
-    document.querySelector('#header').classList.toggle('header-show');
+    const isOpen = document.querySelector('#header').classList.toggle('header-show');
+    document.body.classList.toggle('mobile-nav-open', isOpen);
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
+
+  // Close the mobile menu when tapping the dimmed area outside it.
+  document.addEventListener('click', (e) => {
+    if (document.querySelector('.header-show') && !e.target.closest('#header')) {
+      headerToggle();
+    }
+  });
 
   /**
    * Hide mobile nav on same-page/hash links
