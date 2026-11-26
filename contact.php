@@ -4,6 +4,11 @@ $content = resume_get_content();
 $profile = $content['profile'];
 $about = $content['about'];
 $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
+// WhatsApp needs the international number without "+"; local Malaysian numbers start with 0.
+$whatsappNumber = preg_replace('/[^0-9]/', '', $about['phone']);
+if (strpos($whatsappNumber, '0') === 0) {
+    $whatsappNumber = '60' . substr($whatsappNumber, 1);
+}
 ?>
       <section id="contact" class="contact section">
         
@@ -25,7 +30,7 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
 
               <div class="contact-actions">
                 <a href="mailto:<?= h($about['email']) ?>" class="btn-primary-outline">Email Me</a>
-                <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
+                <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">LinkedIn</a><?php endif; ?>
                 <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">GitHub</a><?php endif; ?>
               </div>
             </div>
@@ -46,6 +51,7 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
               <div>
                 <h3>Phone / WhatsApp</h3>
                 <p><a href="tel:<?= h($phoneHref) ?>"><?= h($about['phone']) ?></a></p>
+                <p class="mt-1"><a href="https://wa.me/<?= h($whatsappNumber) ?>" target="_blank" rel="noopener"><i class="bi bi-whatsapp me-1" aria-hidden="true"></i>Chat on WhatsApp</a></p>
               </div>
             </div><!-- End Info Item -->
 
@@ -62,7 +68,7 @@ $phoneHref = preg_replace('/[^0-9+]/', '', $about['phone']);
                 <i class="bi bi-linkedin flex-shrink-0"></i>
                 <div>
                   <h3>LinkedIn</h3>
-                  <p><a href="<?= h($profile['linkedin']) ?>">View my LinkedIn profile</a></p>
+                  <p><a href="<?= h($profile['linkedin']) ?>" target="_blank" rel="noopener">View my LinkedIn profile</a></p>
                 </div>
               </div><!-- End Info Item -->
               <?php endif; ?>

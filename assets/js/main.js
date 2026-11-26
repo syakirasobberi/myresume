@@ -19,8 +19,18 @@
     document.body.classList.toggle('mobile-nav-open', isOpen);
     headerToggleBtn.classList.toggle('bi-list');
     headerToggleBtn.classList.toggle('bi-x');
+    headerToggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    headerToggleBtn.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
   }
   headerToggleBtn.addEventListener('click', headerToggle);
+
+  // Escape closes the mobile menu and returns focus to the toggle.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && document.querySelector('.header-show')) {
+      headerToggle();
+      headerToggleBtn.focus();
+    }
+  });
 
   // Close the mobile menu when tapping the dimmed area outside it.
   document.addEventListener('click', (e) => {
@@ -87,14 +97,24 @@
   /**
    * Animation on scroll function and init
    */
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   function aosInit() {
-    AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+    // Long stagger delays (up to 600ms) left sections looking empty while scrolling;
+    // cap them so content appears almost immediately.
+    document.querySelectorAll('[data-aos-delay]').forEach(function(el) {
+      if (parseInt(el.getAttribute('data-aos-delay'), 10) > 100) {
+        el.setAttribute('data-aos-delay', '100');
+      }
     });
-    revealOnScroll();
+    AOS.init({
+      duration: 350,
+      easing: 'ease-out',
+      once: true,
+      mirror: false,
+      disable: reduceMotion
+    });
+    if (!reduceMotion) revealOnScroll();
   }
 
   /**
@@ -113,7 +133,7 @@
           revealObserver.unobserve(entry.target);
         }
       });
-    }, { rootMargin: '0px 0px -60px 0px' });
+    }, { rootMargin: '0px 0px 15% 0px' });
     document.querySelectorAll('[data-aos]').forEach(function(el) {
       revealObserver.observe(el);
     });

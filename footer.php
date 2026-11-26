@@ -12,7 +12,7 @@ $profile = $content['profile'];
       </div>
       <div class="container">
         <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename"><?= h($profile['name']) ?></strong> <span>All Rights Reserved</span>
+          <span>&copy; <?= date('Y') ?></span> <strong class="px-1 sitename"><?= h($profile['name']) ?></strong><span>. All rights reserved.</span>
         </div>
     
       </div>

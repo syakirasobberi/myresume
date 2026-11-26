@@ -50,7 +50,7 @@ $resumePdf = 'assets/resume/Nurul-Syakirah-Resume.pdf';
 
   <header id="header" class="header d-flex flex-column justify-content-center">
 
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <button type="button" class="header-toggle d-xl-none bi bi-list" aria-label="Open menu" aria-controls="navmenu" aria-expanded="false"></button>
 
     <?php include 'menu.php'; ?>
 
@@ -72,12 +72,9 @@ $resumePdf = 'assets/resume/Nurul-Syakirah-Resume.pdf';
             <div class="hero-actions">
               <a href="#resume" class="btn-primary-outline">View Resume</a>
               <?php if (is_file(__DIR__ . '/' . $resumePdf)): ?><a href="<?= h($resumePdf) ?>?v=<?= filemtime(__DIR__ . '/' . $resumePdf) ?>" class="btn-secondary-outline" download="Nurul-Syakirah-Resume.pdf"><i class="bi bi-download me-2" aria-hidden="true"></i>Download CV (PDF)</a><?php endif; ?>
-              <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline">LinkedIn</a><?php endif; ?>
-              <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener">GitHub</a><?php endif; ?>
+              <?php if (!empty($profile['linkedin'])): ?><a href="<?= h($profile['linkedin']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener"><i class="bi bi-linkedin me-2" aria-hidden="true"></i>LinkedIn</a><?php endif; ?>
+              <?php if (!empty($profile['github'])): ?><a href="<?= h($profile['github']) ?>" class="btn-secondary-outline" target="_blank" rel="noopener"><i class="bi bi-github me-2" aria-hidden="true"></i>GitHub</a><?php endif; ?>
               <a href="#contact" class="btn-secondary-outline">Contact Me</a>
-            </div>
-            <div class="social-links">
-              <?php include 'social-links.php'; ?>
             </div>
           </div>
         </div>
@@ -117,7 +114,7 @@ $resumePdf = 'assets/resume/Nurul-Syakirah-Resume.pdf';
   <?php include 'footer.php'; ?>
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>

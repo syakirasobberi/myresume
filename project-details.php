@@ -54,7 +54,7 @@ $metaPath = 'project-details.php?id=' . $projectId;
 
 <body class="project-details-page">
   <header id="header" class="header d-flex flex-column justify-content-center">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
+    <button type="button" class="header-toggle d-xl-none bi bi-list" aria-label="Open menu" aria-controls="navmenu" aria-expanded="false"></button>
     <?php include 'menu.php'; ?>
   </header>
 
@@ -115,9 +115,13 @@ $metaPath = 'project-details.php?id=' . $projectId;
               <h2>Screenshots</h2>
               <div class="screenshot-grid">
                 <?php foreach ($screenshots as $screenshot): ?>
-                  <a href="<?= h($screenshot) ?>" class="glightbox" data-gallery="project-screenshots">
-                    <img src="<?= h($screenshot) ?>" alt="<?= h($project['title']) ?> screenshot">
-                  </a>
+                  <?php $caption = resume_screenshot_caption($screenshot); ?>
+                  <figure class="screenshot-item">
+                    <a href="<?= h($screenshot) ?>" class="glightbox" data-gallery="project-screenshots"<?php if ($caption): ?> data-title="<?= h($caption) ?>"<?php endif; ?> aria-label="Enlarge <?= h($caption ?: $project['title'] . ' screenshot') ?>">
+                      <img src="<?= h($screenshot) ?>" alt="<?= h($project['title'] . ($caption ? ': ' . $caption : ' screenshot')) ?>" loading="lazy">
+                    </a>
+                    <?php if ($caption): ?><figcaption><?= h($caption) ?></figcaption><?php endif; ?>
+                  </figure>
                 <?php endforeach; ?>
               </div>
             </div>
@@ -153,7 +157,7 @@ $metaPath = 'project-details.php?id=' . $projectId;
 
   <?php include 'footer.php'; ?>
 
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short" aria-hidden="true"></i></a>
   <div id="preloader"></div>
 
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

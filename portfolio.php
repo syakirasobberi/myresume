@@ -35,7 +35,7 @@ foreach ($portfolio['items'] as $item) {
         <article class="featured-project" data-aos="fade-up">
           <div class="row g-0">
             <div class="col-lg-6">
-              <a href="project-details.php?id=<?= h($featured['id']) ?>" class="featured-project-media">
+              <a href="project-details.php?id=<?= h($featured['id']) ?>" class="featured-project-media" aria-label="View <?= h($featured['title']) ?> case study">
                 <img src="<?= h($fImage) ?>" alt="<?= h($featured['title']) ?> screenshot">
               </a>
             </div>
@@ -80,7 +80,7 @@ foreach ($portfolio['items'] as $item) {
             <?php $details = resume_project_detail_for($item); ?>
             <?php $github = resume_url($item['github'] ?? ''); ?>
             <?php $demo = resume_url($item['link'] ?? ''); ?>
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item <?= h(resume_filter_class($item['category'])) ?>">
+            <div class="col-lg-6 col-md-6 portfolio-item isotope-item <?= h(resume_filter_class($item['category'])) ?>">
               <div class="portfolio-card">
               <img src="<?= h($image) ?>" class="img-fluid" alt="<?= h($item['title']) ?>" loading="lazy">
               <div class="portfolio-info">
@@ -94,10 +94,12 @@ foreach ($portfolio['items'] as $item) {
                   <?php foreach (array_slice($details['technologies'], 0, 4) as $tool): ?><span><?= h($tool) ?></span><?php endforeach; ?>
                 </div>
                 <p class="portfolio-outcome"><?= h($details['outcome']) ?></p>
-                <a href="<?= h($image) ?>" title="<?= h($item['title']) ?>" aria-label="Preview <?= h($item['title']) ?> image" data-gallery="portfolio-gallery" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="project-details.php?id=<?= h($item['id']) ?>" title="Project Details" aria-label="<?= h($item['title']) ?> details" class="details-link"><i class="bi bi-link-45deg"></i></a>
-                <?php if ($github): ?><a href="<?= h($github) ?>" title="Source code on GitHub" aria-label="<?= h($item['title']) ?> source code on GitHub" class="details-link" target="_blank" rel="noopener"><i class="bi bi-github"></i></a><?php endif; ?>
-                <?php if ($demo): ?><a href="<?= h($demo) ?>" title="Live demo" aria-label="<?= h($item['title']) ?> live demo" class="details-link" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i></a><?php endif; ?>
+                <div class="portfolio-card-actions">
+                  <a href="project-details.php?id=<?= h($item['id']) ?>" class="card-action card-action-primary" aria-label="View <?= h($item['title']) ?> details">View details <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                  <a href="<?= h($image) ?>" title="<?= h($item['title']) ?>" data-gallery="portfolio-gallery" class="glightbox card-action" aria-label="Preview <?= h($item['title']) ?> image"><i class="bi bi-zoom-in" aria-hidden="true"></i> Preview</a>
+                  <?php if ($github): ?><a href="<?= h($github) ?>" class="card-action" target="_blank" rel="noopener" aria-label="<?= h($item['title']) ?> source code on GitHub"><i class="bi bi-github" aria-hidden="true"></i> Code</a><?php endif; ?>
+                  <?php if ($demo): ?><a href="<?= h($demo) ?>" class="card-action" target="_blank" rel="noopener" aria-label="<?= h($item['title']) ?> live demo"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Demo</a><?php endif; ?>
+                </div>
               </div>
               </div>
             </div><!-- End Portfolio Item -->

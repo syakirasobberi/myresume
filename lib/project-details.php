@@ -108,3 +108,20 @@ function resume_project_list_value($value, array $fallback = [])
 
     return $fallback;
 }
+
+/**
+ * Human-readable caption from a screenshot filename, e.g.
+ * "assets/img/.../2-pharmacist-dashboard.jpg" -> "Pharmacist dashboard".
+ * Returns '' for auto-generated upload names (timestamps/hashes) that carry no meaning.
+ */
+function resume_screenshot_caption($path)
+{
+    $name = pathinfo((string)$path, PATHINFO_FILENAME);
+    $name = preg_replace('/^\d+[-_ ]*/', '', $name);
+    if ($name === '' || preg_match('/^[0-9a-f-]+$/i', $name)) {
+        return '';
+    }
+    $caption = trim(preg_replace('/[-_]+/', ' ', $name));
+    $caption = preg_replace_callback('/\b(ai|ui|ux|qa|uat|ocr|pdf|api)\b/i', fn($m) => strtoupper($m[1]), $caption);
+    return ucfirst($caption);
+}

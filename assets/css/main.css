@@ -2742,3 +2742,118 @@ section,
     z-index: 996;
   }
 }
+
+/* ---------- UX enhancements ---------- */
+
+/* Shorter fade-up travel so sections never look empty while scrolling */
+[data-aos="fade-up"] {
+  transform: translate3d(0, 24px, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Mobile menu toggle is now a real <button> */
+button.header-toggle {
+  border: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.header-toggle:focus-visible,
+.navmenu a:focus-visible,
+.card-action:focus-visible,
+.scroll-top:focus-visible {
+  outline: 3px solid #14b8a6;
+  outline-offset: 3px;
+}
+
+/* Desktop icon nav: keyboard focus reveals the label the same way hover does */
+@media (min-width: 992px) {
+  .navmenu a:focus-visible {
+    max-width: 100%;
+    color: var(--contrast-color);
+    background: var(--nav-hover-color);
+  }
+
+  .navmenu a:focus-visible span {
+    display: block;
+  }
+}
+
+/* Portfolio cards: two per row on desktop, screenshots anchored to the top */
+@media (min-width: 992px) {
+  .portfolio-card img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.portfolio-card img {
+  object-position: top center;
+}
+
+.portfolio-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #99f6e4;
+  color: #0f766e;
+  background: #f0fdfa;
+  font-family: var(--nav-font);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.card-action:hover {
+  color: #ffffff;
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.card-action-primary {
+  color: #ffffff;
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+.card-action-primary:hover {
+  background: #115e59;
+  border-color: #115e59;
+}
+
+/* Project screenshots: fill the row and show what each one is */
+.screenshot-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.screenshot-item {
+  margin: 0;
+}
+
+.screenshot-item figcaption {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
