@@ -144,7 +144,7 @@
                 "title": "PharmaTrack",
                 "category": "Projects",
                 "description": "Degree Final Year Project: AI-enabled clinical decision support system for community pharmacies",
-                "image": "assets/img/projects/pharmatrack/face-check-in-kiosk.jpg",
+                "image": "assets/img/projects/pharmatrack/face-check-in-welcome.jpg",
                 "link": "https://d09097.schtg.com/pharmatrack/",
                 "problem": "Community pharmacies often manage patient health and medication records manually, which leads to scattered records, slower check-ins, and harder follow-up on patients who need monitoring.",
                 "role": "Full-stack Laravel developer and QA tester: designed and built the system, integrated face recognition, OCR, and risk prediction, and planned and ran UAT.",
@@ -169,8 +169,12 @@
                 "screenshots": [
                     "assets/img/projects/pharmatrack/pharmacist-dashboard.jpg",
                     "assets/img/projects/pharmatrack/patient-profile.jpg",
-                    "assets/img/projects/pharmatrack/medication-safety-and-adherence.jpg",
-                    "assets/img/projects/pharmatrack/ai-health-summary.jpg"
+                    "assets/img/projects/pharmatrack/medication-drug-safety-check.jpg",
+                    "assets/img/projects/pharmatrack/clinical-summary.jpg",
+                    "assets/img/projects/pharmatrack/patient-portal.jpg",
+                    "assets/img/projects/pharmatrack/patient-medication-adherence.jpg",
+                    "assets/img/projects/pharmatrack/admin-audit-log.jpg",
+                    "assets/img/projects/pharmatrack/admin-settings-and-backups.jpg"
                 ],
                 "github": "https://github.com/syakirasobberi/pharmatrack",
                 "featured": true
